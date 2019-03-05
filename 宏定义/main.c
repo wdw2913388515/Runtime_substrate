@@ -25,6 +25,16 @@ printf("a: %d\n",a);\
 printf("b: %d\n",b);
 
 
+#ifndef A  //是否没有宏定义
+
+#define A 1
+
+#endif     //判断结束
+
+#define B 2
+
+//#undef A   //取消宏定义
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -39,11 +49,18 @@ int main(int argc, const char * argv[]) {
     
     
     LOG;
-    
-    
     printf("a = %d , b = %d \n",a,b);
     printf("%.5f\n",PI);
     
+    
+    /** 4.逻辑判断  相当于if...else if...else */
+#ifdef A
+    printf("define A : %d\n",A);
+#elif B
+    printf("define B : %d\n",B);
+#else
+    printf("no define\n");
+#endif
     
     
     return 0;
